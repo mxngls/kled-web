@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout.jsx";
-import WordContainer from "../../components/Word/WordContainer.jsx";
+import WordContainer from "../../components/word/WordContainer.jsx";
 import { getAllIds, getData } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";

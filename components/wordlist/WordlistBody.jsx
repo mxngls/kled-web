@@ -1,4 +1,4 @@
-import WordContainer from "../Word/WordContainer";
+import WordContainer from "../word/WordContainer";
 import DeleteWordButton from "../DeleteWordButton";
 
 export default function WordlistBody({ data, setData }) {

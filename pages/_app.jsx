@@ -8,7 +8,7 @@ import "../styles/globals.css";
 import "../styles/pages/404.css";
 import "../styles/pages/view.css";
 import "../styles/pages/home.css";
-import "../styles/pages/Wordlist.css";
+import "../styles/pages/wordlist.css";
 import "../styles/pages/404.css";
 
 // Shared between components
@@ -25,8 +25,8 @@ import "../styles/content/contentFooterContainer.css";
 // CSS for <HeaderContainer /> component
 import "../styles/header/headerContainer.css"
 import "../styles/header/navbar.css";
-import "../styles/header/searchbar/searchBarContainer.css";
-import "../styles/header/searchbar/searchBarInput.css";
+import "../styles/header/searchbar/searchbarContainer.css";
+import "../styles/header/searchbar/searchbarInput.css";
 import "../styles/header/searchbar/searchOptionsContainer.css";
 import "../styles/header/searchbar/matchType.css";
 import "../styles/word/inflections.css";
