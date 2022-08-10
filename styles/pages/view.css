@@ -1,0 +1,19 @@
+.add-wordlist-wrap {
+    margin: 1em 0 2rem 0;
+    width: fit-content;
+    background-color: aliceblue;
+}
+
+#add-wordlist-button {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: inherit
+}
+
+#add-icon {
+    width: inherit;
+    height: inherit;
+}

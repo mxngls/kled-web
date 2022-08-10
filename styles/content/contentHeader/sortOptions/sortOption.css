@@ -1,0 +1,16 @@
+.sort-option-container__sort-option {
+    margin-top: 0.1rem;
+    padding: 0.3rem;
+}
+
+.sort-option-container__sort-option:hover {
+    border-radius: 5px;
+    background-color: #e8f5fb;
+    cursor: pointer;
+}
+
+.sort-option-container__sort-option--active {
+    color: #209be0;
+    cursor:default;
+    padding: 0.3rem
+}

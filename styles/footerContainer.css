@@ -1,0 +1,17 @@
+.footer__container {
+    font-size: 65%;
+    line-height: 1.1rem;
+    font-weight: 200;
+    min-height: 14.2vh;
+    border-top: 1px solid #eaecef;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer__container--content {
+    color: rgb(149, 149, 149);
+    left: 0;
+    width: 40rem;
+    margin-left: 2rem;
+}

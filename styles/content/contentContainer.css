@@ -1,0 +1,31 @@
+.content-container,
+.content-container__body--view {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    margin: 0 2rem 0 2rem;
+    height: fit-content;
+}
+
+.content-container__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 3rem 0 3rem;
+    border-top: 1px solid #eaecef;
+    border-bottom: 1px solid #eaecef;
+}
+
+@media (max-width: 720px) {
+
+    .content-container__body,
+    .content-container__body--view {
+        margin: 0;
+    }
+}
+
+@media (max-width: 300px) {
+    .content-container {
+        margin-left: 1.4rem;
+    }
+}

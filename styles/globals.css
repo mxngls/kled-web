@@ -1,0 +1,84 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #ffff;
+  color: #202020;
+  font-weight: 400;
+  font-family: 'Modern Era', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  border-color: #eaecef;
+  display: block;
+  overflow: scroll;
+  letter-spacing: 0.015em;
+  font-weight: 200;
+}
+
+#__next {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-weight: 100;
+  font-size: 100%;
+  color: inherit;
+}
+
+input[type=text] {
+  font-family: 'Modern Era', system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+}
+
+button {
+  font-size: 100%;
+}
+
+h1,
+h4 {
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1 {
+  margin: 0;
+  margin-top: 2rem;
+  font-family: 'Modern Era';
+  font-size: 600%;
+}
+
+h4 {
+  color: rgb(149, 149, 149);
+  font-weight: 300;
+  margin: 0 0 3rem 0;
+}
+
+a {
+  color: #202020;}
+
+a:hover {
+  cursor: pointer;
+}
+
+p {
+  line-height: 1.4em;
+}
+
+sup {
+  margin-left: 0.25rem;
+  font-size: 82%;
+}
+
+br {
+  height: 5em
+}

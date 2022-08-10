@@ -1,0 +1,30 @@
+.content-container__footer {
+    height: fit-content;
+    width: 100%;
+    height: 25px;
+    padding: 2rem 0 2rem 0;
+    font-size: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.content-container__filler {
+    align-self: center;
+    content: "";
+    width: 5.2rem;
+    height: 2rem;
+}
+
+.content-container__filler:after {
+    content: '\200b';
+}
+
+.content-container__current-page {
+    text-align: center;
+    min-width: 4rem;
+    margin: 0 1rem 0 1rem;
+    font-weight: 700;
+}

@@ -1,0 +1,40 @@
+.word-container__examples-container {
+    height: fit-content;
+    margin: 3rem 0 3rem 0;
+}
+
+.word-container__examples-list {
+    text-decoration: none;
+    margin-top: 0;
+}
+
+.word-container__example,
+.word-container__example--convo {
+    margin-bottom: 1rem;
+    font-size: 110%;
+    padding-left: 0.5em;
+}
+
+.word-container__example--phrase {
+    margin: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.word-container__example--convo {
+    line-height: 2rem;
+}
+
+@media (max-width: 565px) {
+    .word-container__examples-list {
+        padding: 1em;
+    }
+
+    .word-container__examples-list {
+        margin: 0;
+    }
+
+    .word-container__examples-container {
+        margin: 1rem 0 1rem 0;
+    }
+}

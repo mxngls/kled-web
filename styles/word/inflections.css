@@ -1,0 +1,8 @@
+.word-container__inflections-container {
+    font-size: 110%;
+    margin-bottom: 1.5rem;
+}
+
+.word-container__inflections-link {
+    margin-left: 0.4em;
+}

@@ -1,0 +1,31 @@
+.empty-button,
+.empty-button--sort,
+.content-container--empty-button {
+    background-color: inherit;
+    margin: 0 0.3rem 0 0.3rem;
+    padding: 0;
+    height: 1.2rem;
+    width: 1.2rem;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.empty-button--sort {
+    margin: 0;
+}
+
+.content-container--empty-button {
+    height: 2rem;
+    width: 2rem;
+}
+
+.empty-button__icon {
+    width: inherit;
+    height: inherit;
+}
+
+.empty-button__icon:hover {
+    filter:
+        brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(1114%) hue-rotate(347deg) brightness(106%) contrast(88%);
+    cursor: pointer;
+}

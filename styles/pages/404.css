@@ -1,0 +1,30 @@
+.not-found-container {
+    text-align: center;
+    height: 65vh;
+}
+
+.not-found-container__content {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.not-found-container__emoji {
+    color: #eaecef;
+    margin: 1rem 1rem 3rem 1rem;
+    font-size: 900%;
+}
+
+.not-found-container__message {
+    color: rgb(149, 149, 149);
+    margin: 0 1rem 0 1rem;
+}
+
+@media (max-width: 392px) {
+    .not-found-container__emoji {
+        font-size: 650%;
+    }
+
+}

@@ -1,0 +1,41 @@
+.word-container,
+.word-container--last {
+    width: 70%;
+    padding: 1.5rem 0 1.5rem 0;
+    border-bottom: 1px solid #eaecef;
+}
+
+.word-container--last {
+    border-bottom: none;
+}
+
+.word-container__body {
+    margin-left: 1em;
+}
+
+.word-container__show-button--example,
+.word-container__show-button--view {
+    width: fit-content;
+    background-color: #eaecef;
+    border: none;
+    padding: 0.4em 0.8em 0.4em 0.8em;
+    margin: 0 0 0 3rem;
+    border-radius: 15px;
+}
+
+.word-container__show-button--view {
+    margin: 0;
+}
+
+.word-container__show-button--example:hover,
+.word-container__show-button--view:hover {
+    background-color: #F1F3F5;
+}
+
+@media (max-width: 918px) {
+
+    .word-container,
+    .word-container--last {
+        width: 100%;
+    }
+}

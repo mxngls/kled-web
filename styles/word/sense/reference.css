@@ -1,0 +1,35 @@
+.word-container__reference-container {
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0.4em;
+    background-color: #eaecef;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.word-container__reference-body {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.word-container__reference-type {
+    min-width: 5rem;
+    margin-right: 1rem;
+    width: max-content;
+}
+
+.word-container__reference-value {
+    font-size: 110%;
+}
+
+@media (max-width: 565px) {
+    .word-container__reference-container {
+        margin: 1rem 0 1rem 0;
+    }
+}

@@ -1,0 +1,56 @@
+.word-container__header,
+.word-container__header--fill {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.word-container__first {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.word-container__first>* {
+    margin: 0.5rem;
+    margin-left: 0;
+}
+
+.word-container__header--fill {
+    padding: 0.18em;
+    margin: 1em 0 2em 0;
+}
+
+.word-container__hangul,
+.word-container__hanja {
+    display: flex;
+    font-size: 160%;
+    margin: 0;
+    margin-right: 0.6em;
+}
+
+.word-container__hanja {
+    margin-bottom: 5px;
+}
+
+.word-container__match,
+.word-container__hangul {
+    font-weight: 700;
+}
+
+.word-container__hanja {
+    margin-right: 2rem;
+}
+
+.word-container__type {
+    line-height: normal;
+    font-family: Helvetica Neue;
+    width: fit-content;
+    padding: 0.18em;
+    margin: 1em 0 1em 0;
+    border: 1px solid rgb(149, 149, 149);
+    border-radius: 10%;
+}

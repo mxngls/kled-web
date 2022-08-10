@@ -1,0 +1,34 @@
+.search-bar-container__input {
+    text-align: left;
+    background-color: inherit;
+    padding: 0 0 0 0.3rem;
+    width: 100%;
+    border: none;
+}
+
+.search-bar-container__input:focus {
+    cursor: auto;
+    outline: none;
+}
+
+.search-bar-container__input:placeholder-shown {
+    text-overflow: ellipsis;
+}
+
+.search-bar-container__input::placeholder {
+    font-size: 94%;
+    font-family: 'Modern Era';
+    letter-spacing: 0.015em;
+    color: rgb(149, 149, 149);
+}
+
+@media (max-width: 538px) {
+    .search-bar-container__input {
+        border-bottom: 1px solid #eaecef;
+        padding: 0;
+    }
+
+    .search-bar-container__input::placeholder {
+        opacity: 0
+    }
+}
