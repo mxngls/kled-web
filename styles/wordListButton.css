@@ -1,5 +1,5 @@
 .wordlist-button {
-    font-weight: 300;
+    font-weight: 200;
     color: #15638F;
     padding: 0.6em 0.8em 0.6em 0.8em;
     background-color: #DAEEFA;
@@ -9,11 +9,15 @@
     border-radius: 25px;
 }
 
+.wordlist-button__content {
+    font-weight: 200;
+}
+
 .wordlist-button:hover {
     background-color: #E1F1FB;
 }
 
-.icon-wrap {
+.wordlist-button__icon-wrap {
     margin: 0;
     margin-right: 0.4rem;
     height: 1.45rem;
@@ -23,7 +27,7 @@
     border: none;
 }
 
-.icon {
+.wordlist-button__icon {
     width: inherit;
     height: inherit;
 }

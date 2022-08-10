@@ -12,7 +12,7 @@ body {
   display: block;
   overflow: scroll;
   letter-spacing: 0.015em;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 #__next {
@@ -64,7 +64,8 @@ h4 {
 }
 
 a {
-  color: #202020;}
+  color: #202020;
+}
 
 a:hover {
   cursor: pointer;

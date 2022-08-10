@@ -8,8 +8,8 @@ export default function WordListButton({ handleOnClick, children, content }) {
             onClick={() => handleOnClick()}
         >
             {" "}
-            <div className="icon-wrap">{children}</div>
-            <span className="button-content">{content}</span>
+            <div className="wordlist-button__icon-wrap">{children}</div>
+            <span className="wordlist-button__content">{content}</span>
         </button>
     );
 }

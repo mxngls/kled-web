@@ -1,13 +1,21 @@
 @font-face {
-    font-family: 'Modern Era';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../public/fonts/ModernEra-Regular.ttf) format('truetype');
-  }
-  
-  @font-face {
-    font-family: 'Modern Era';
-    font-style: normal;
-    font-weight: 600;
-    src: url(../public/fonts/ModernEra-Bold.ttf) format('truetype');
-  }
+  font-family: 'Modern Era';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../public/fonts/ModernEra-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Modern Era';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../public/fonts/ModernEra-Bold.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Modern Era';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../public/fonts/ModernEra-Light.ttf) format('truetype');
+}
