@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import ContentFooter from "./contentFooter/ContentFooterContainer";
 import ContentHeader from "./ContentHeader/ContentHeaderContainer";
 
-import WordContainer from "../Word/WordContainer";
+import WordContainer from "../word/WordContainer";
 import ContentBody from "./ContentBody";
 
 import GoToViewButton from "../GoToViewButton";

@@ -1,4 +1,4 @@
-import ChevronForwardIcon from "../../icons/chevronForwardIcon";
+import ChevronForwardIcon from "../../icons/ChevronForwardIcon";
 
 export default function ForwardButton({ changeRoute, batch, maxPage }) {
     return (

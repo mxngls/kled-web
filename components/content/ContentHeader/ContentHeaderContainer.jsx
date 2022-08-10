@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import SortIcon from "../../icons/sortIcon";
+import SortIcon from "../../icons/SortIcon";
 import SortOptionsContainer from "./SortOptionsContainer";
 
 export default function ContentHeaderContainer({ resNum, option, setOption }) {

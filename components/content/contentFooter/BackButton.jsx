@@ -1,4 +1,4 @@
-import ChevronBackIcon from "../../icons/chevronBackIcon";
+import ChevronBackIcon from "../../icons/ChevronBackIcon";
 
 export default function BackButton({changeRoute, batch}) {
     return (

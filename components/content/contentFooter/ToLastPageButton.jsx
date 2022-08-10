@@ -1,4 +1,4 @@
-import LastPageIcon from "../../icons/lastPageIcon";
+import LastPageIcon from "../../icons/LastPageIcon";
 
 export default function ToLastPageButton({ changeRoute, maxPage }) {
     return (
