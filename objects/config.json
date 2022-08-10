@@ -1,0 +1,19 @@
+{
+    "addToCur": true,
+    "newSpread": 0,
+    "schedVer": 1,
+    "activeDecks": [
+        1
+    ],
+    "curModel": 0,
+    "dayLearnFirst": false,
+    "curDeck": 0,
+    "timeLim": 0,
+    "collapseTime": 1200,
+    "dueCounts": true,
+    "estTimes": true,
+    "sortBackwards": false,
+    "localOffset": -540,
+    "sortType": "noteFld",
+    "nextPos": 266
+}

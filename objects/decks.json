@@ -1,0 +1,34 @@
+{
+    "66458880": {
+        "id": 66458880,
+        "mod": 66458880,
+        "name": "KLED",
+        "usn": -1,
+        "lrnToday": [
+            0,
+            0
+        ],
+        "revToday": [
+            0,
+            0
+        ],
+        "newToday": [
+            0,
+            0
+        ],
+        "timeToday": [
+            0,
+            0
+        ],
+        "collapsed": true,
+        "browserCollapsed": true,
+        "desc": "",
+        "md": true,
+        "dyn": 0,
+        "activeTags": [],
+        "inactiveTags": [],
+        "conf": 1,
+        "extendNew": 0,
+        "extendRev": 0
+    }
+}

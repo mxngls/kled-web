@@ -1,0 +1,149 @@
+{
+    "66458880": {
+        "id": 66458880,
+        "name": "KLED",
+        "type": 0,
+        "mod": 66458880,
+        "usn": 1978,
+        "sortf": 0,
+        "did": 66458880,
+        "tmpls": [
+            {
+                "name": "hangul > translation",
+                "ord": 0,
+                "qfmt": "<div id=\"sense-container\">\n  <div id=\"filler-top-front\"></div>\n  <div id=\"randomExample\"></div>\n  <div id=\"sense-content\" style=\"display: none\">{{Senses}}</div>\n</div>\n\n<script>\n\n    function getRandomExample() {\n        let senses = document.getElementsByClassName(\"sense\").length\n        let arr = [];\n\n        for (let i = 0; i < senses; i++) {\n            let sense = document.getElementById(`sense-info-sub-${i}`)\n            let list = sense.getElementsByTagName('li')\n            let l = list.length - 1\n            let examples = [i,]\n            for (let n = l; n >= (l - 2); n--) {\n                examples.push(list[n].innerHTML)\n            }\n            arr.push(examples)\n        }\n\n        let randOne = Math.floor(Math.random() * arr.length)\n        let randTwo = Math.floor(Math.random() * arr[randOne].length)\n        if (randTwo === 0) { randTwo += 1 }\n        return arr[randOne][randTwo]\n    }\n\n    document.getElementById(\"randomExample\").innerHTML = getRandomExample();\n\n\n    function playAudio(url) {\n        new Audio(url).play();\n    }\n\n    function expander(index) {\n        let sense = document.getElementById(`sense-info-sub-${index}`)\n        let header = document.getElementById(`sense-info-header-${index}`)\n\n        if (sense.style.display === \"block\") {\n            sense.style.display = \"none\";\n            sense.style.paddingRight = \"0px\"\n            sense.style.paddingLeft = \"0px\"\n            header.style.paddingTop = \"0px\";\n\n\n        } else {\n            sense.style.display = \"block\";\n            sense.style.paddingRight = \"6px\"\n            sense.style.paddingLeft = \"6px\"\n            header.style.paddingTop = \"10px\";\n\n        }\n    }\n\n</script>",
+                "afmt": "<div id=\"sense-container\">\n    <div id=\"sense-info\">\n        <div id=\"pronounciation\">{{Pronounciation}}</div>\n        <div id=\"hangul\">{{Hangul}}</div>\n        <div id=\"hanja\">{{Hanja}}</div>\n        <button id=\"play-audio\" onclick=\"playAudio('{{Audio}}')\">▶</button>\n        <div id=\"word-type-eng\">({{WordTypeEng}})</div>\n    </div>\n    <div id=\"sense-content\">{{Senses}}</div>\n</div>\n\n<script>\n\n    function checkAudio(url) {\n        if (url == \"\") {\n            audioElement.style.display = \"none\";\n        }\n\n    }\n\n    checkAudio('{{Audio}}')\n\n    function playAudio(url) {\n        const audioContext = new window.AudioContext()\n        const audioElement = new Audio(url);\n        audioElement.addEventListener(\"ended\", () => {audioContext.close()})\n        audio.play()\n    }\n\n\n    function playAudio(url) {\n        const audio = new Audio(url);\n        audio.addEventListener(\"ended\", () => audioContext.close());\n        audio.play()\n    }\n\n    function expander(index) {\n        let sense = document.getElementById(`sense-info-sub-${index}`)\n        let header = document.getElementById(`sense-info-header-${index}`)\n\n        if (sense.style.display === \"block\") {\n            sense.style.display = \"none\";\n            sense.style.paddingRight = \"0px\"\n            sense.style.paddingLeft = \"0px\"\n            header.style.paddingTop = \"0px\";\n\n\n        } else {\n            sense.style.display = \"block\";\n            sense.style.paddingRight = \"6px\"\n            sense.style.paddingLeft = \"6px\"\n            header.style.paddingTop = \"10px\";\n\n        }\n    }\n\n</script>",
+                "bqfmt": "",
+                "bafmt": "",
+                "did": null,
+                "bfont": "",
+                "bsize": 0
+            },
+            {
+                "name": "translation > hangul",
+                "ord": 1,
+                "qfmt": "<div id=\"sense-container\">\n\t<div id=\"filler-top-back\"></div>\n\t<div id=\"sense-content\">{{Senses}}</div>\n</div>",
+                "afmt": "<div id=\"sense-container\">\n    <div id=\"sense-info\">\n        <div id=\"pronounciation\">{{Pronounciation}}</div>\n        <div id=\"hangul\">{{Hangul}}</div>\n        <div id=\"hanja\">{{Hanja}}</div>\n        <button id=\"play-audio\" onclick=\"playAudio('{{Audio}}')\">▶</button>\n        <div id=\"word-type-eng\">({{WordTypeEng}})</div>\n    </div>\n    <div id=\"sense-content\">{{Senses}}</div>\n</div>\n\n<script>\n\n    function checkAudio(url) {\n        if (url == \"\") {\n            audioElement.style.display = \"none\";\n        }\n\n    }\n\n    checkAudio('{{Audio}}')\n\n    function playAudio(url) {\n        const audioElement = new Audio(url)\n        audioElement.play()\n    }\n\n    function getRandomExample() {\n        let senses = document.getElementsByClassName(\"sense\").length\n\n        let arr = [];\n\n        for (let i = 0; i < senses; i++) {\n            let sense = document.getElementById(`sense-info-sub-${i}`)\n            let list = sense.getElementsByTagName('li')\n            let l = list.length - 1\n            let examples = [i,]\n            for (let n = l; n >= (l - 2); n--) {\n                examples.push(list[n].innerHTML)\n            }\n            arr.push(examples)\n        }\n\n        let randomExample = document.getElementById(\"randomExample\")\n        let randOne = Math.floor(Math.random() * arr.length)\n        let randTwo = Math.floor(Math.random() * arr[randOne].length)\n        if (randTwo === 0) { randTwo += 1 }\n        randomExample.innerHTML = arr[randOne][randTwo]\n    }\n\n    function expander(index) {\n        let sense = document.getElementById(`sense-info-sub-${index}`)\n        let header = document.getElementById(`sense-info-header-${index}`)\n\n        if (sense.style.display === \"block\") {\n            sense.style.display = \"none\";\n            sense.style.paddingRight = \"0px\"\n            sense.style.paddingLeft = \"0px\"\n            header.style.paddingTop = \"0px\";\n\n\n        } else {\n            sense.style.display = \"block\";\n            sense.style.paddingRight = \"6px\"\n            sense.style.paddingLeft = \"6px\"\n            header.style.paddingTop = \"10px\";\n\n        }\n    }\n\n</script>",
+                "bqfmt": "",
+                "bafmt": "",
+                "did": null,
+                "bfont": "",
+                "bsize": 0
+            }
+        ],
+        "flds": [
+            {
+                "name": "Hangul",
+                "ord": 0,
+                "sticky": false,
+                "rtl": false,
+                "font": "AppleGothic",
+                "size": 20,
+                "media": [],
+                "description": ""
+            },
+            {
+                "name": "Id",
+                "ord": 1,
+                "sticky": false,
+                "rtl": false,
+                "font": "AppleGothic",
+                "size": 20,
+                "media": [],
+                "description": ""
+            },
+            {
+                "name": "Pronounciation",
+                "ord": 2,
+                "sticky": false,
+                "rtl": false,
+                "font": "AppleGothic",
+                "size": 20,
+                "media": [],
+                "description": ""
+            },
+            {
+                "name": "Audio",
+                "ord": 3,
+                "sticky": false,
+                "rtl": false,
+                "font": "AppleGothic",
+                "size": 20,
+                "description": "",
+                "media": []
+            },
+            {
+                "name": "Hanja",
+                "ord": 4,
+                "sticky": false,
+                "rtl": false,
+                "font": "Arial",
+                "size": 20,
+                "description": ""
+            },
+            {
+                "name": "WordTypeEng",
+                "ord": 5,
+                "sticky": false,
+                "rtl": false,
+                "font": "Gothic A1",
+                "size": 20,
+                "description": ""
+            },
+            {
+                "name": "WordTypeKr",
+                "ord": 6,
+                "sticky": false,
+                "rtl": false,
+                "font": "Gothic A1",
+                "size": 20,
+                "description": ""
+            },
+            {
+                "name": "Senses",
+                "ord": 7,
+                "sticky": false,
+                "rtl": false,
+                "font": "AppleGothic",
+                "size": 20,
+                "description": ""
+            }
+        ],
+        "css": "#sense-container {\n    font-size: 120%;\n    margin-top: 10vh;\n    text-align: center;\n    height: fit-content;\n}\n\n#sense-content {\n    font-family: \"Arial\";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-align: left;\n    margin-top: 5px;\n}\n\n#sense-contents {\n    margin: 0;\n}\n\n#sense-info {\n    margin: 0;\n}\n\n#randomExample {\n    margin: auto;\n    text-align: center;\n    font-size: 175%;    \n    width: fit-content;\n}\n\n.sense {\n    padding: 6px 10px 6px 6px;\n    border-radius: 25px;\n    background-color: #E9E9E9;\n    margin-bottom: 5px;\n    height: fix-content;\n}\n\n#filler-top-front:empty {\n    height: 15px;\n    margin-bottom: 5px;\n}\n\n#filler-top-back:empty {\n    height: 120.5px;\n    margin-bottom: 15px;\n}\n\n#pronounciation {\n    color: #a9a9a9;\n    height: 15px;\n    margin-bottom: 5px;\n    font-size: 85%;\n}\n\n#play-audio {\n    border-radius: 30px;\n    height: 60;\n    margin-bottom: 20px;\n    font-size: 150%;\n}\n\n#hangul a {\n    color: #007AFF;\n    font-size: 185%;\n    margin-bottom: 10px;\n}\n\n#hangul sup {\n    font-size: 70%;\n    margin-left: 2px;\n}\n\n#hanja {\n    font-size: 125%;\n    margin-bottom: 5px;\n}\n\n#word-type-eng {\n    font-size: 80%;\n}\n\n.translation {\n    margin-right: 5px;\n    display: inline-block;\n    text-decoration: underline;\n    text-decoration-style: dotted;\n    font-style: italic;\n    margin-left: 6px;\n}\n\n.definition {\n    margin-top: 10px;\n    padding-left: 26px;\n}\n\n.sense-nr { \n    margin-right: -6px;\n    font-weight: bold;\n    display: inline-block;\n    padding-left: 6px;\n}\n\n.examples ul {\n    padding-left: 44px;\n    list-style-position: outside;\n}\n\n.reference {\n    margin-bottom: 5px;\n    margin-left: 26px;\n}\n\n.reference-type {\n    text-decoration: underline dotted;\n    width: 100px;\n    display: inline-block;\n}\n\n.reference-value {\n    display: inline-block;\n}\n\n.reference-value.link {\n    color: #007AFF;\n}\n\n@media (prefers-color-scheme: dark) {\n    .sense {\n        background-color: #2b3856;\n    }\n}\n\n@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {\n    #sense-info {\n        margin-bottom: 25px;\n    }\n}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "latexPost": "\\end{document}",
+        "latexsvg": false,
+        "req": [
+            [
+                0,
+                "any",
+                [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            ],
+            [
+                1,
+                "any",
+                [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            ]
+        ],
+        "vers": [],
+        "tags": []
+    }
+}
