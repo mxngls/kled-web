@@ -1,2 +1,2 @@
-data filter=lfs diff=lfs merge=lfs -text
 dict_Full.json filter=lfs diff=lfs merge=lfs -text
+data filter=lfs diff=lfs merge=lfs -text
