@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST={"polyfillFiles":["static/chunks/polyfills.js"],"devFiles":["react-refresh.js"],"ampDevFiles":["webpack.js","amp.js"],"lowPriorityFiles":[],"rootMainFiles":[],"pages":{"/_app":["webpack.js","main.js","pages/_app.js"],"/_error":["webpack.js","main.js","pages/_error.js"]},"ampFirstPages":[]}
