@@ -2,7 +2,8 @@
     font-size: 65%;
     line-height: 1.1rem;
     font-weight: 200;
-    min-height: 14.2vh;
+    height: calc(12vh - 1px);
+    width: 100%;
     border-top: 1px solid #eaecef;
     display: flex;
     flex-direction: row;
@@ -12,6 +13,6 @@
 .footer__container--content {
     color: rgb(149, 149, 149);
     left: 0;
-    width: 40rem;
-    margin-left: 2rem;
+    max-width: 40rem;
+    margin: 1rem 2rem 1rem 2rem;
 }

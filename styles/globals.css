@@ -10,7 +10,6 @@ body {
   font-family: 'Modern Era', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
   border-color: #eaecef;
   display: block;
-  overflow: scroll;
   letter-spacing: 0.015em;
   font-weight: 400;
 }
@@ -21,6 +20,7 @@ body {
 }
 
 main {
+  min-height: 72vh;
   display: flex;
   flex-direction: column;
 }
