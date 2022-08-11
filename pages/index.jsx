@@ -14,7 +14,7 @@ export default function Home() {
                     <h1>KLED</h1>
                     <h4>The Korean Learner&apos;s English Dictionary</h4>
                     <div className="home__content">
-                        <SearchBarContainer main={true} />
+                        <SearchBarContainer home={true} />
                     </div>
                 </div>
             </main>
