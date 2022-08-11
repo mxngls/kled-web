@@ -1,6 +1,4 @@
-import { useRouter } from "next/router";
 import Layout from "../components/Layout";
-import Link from "next/link";
 
 export default function Custom404({ db, setDb, objects }) {
     return (
