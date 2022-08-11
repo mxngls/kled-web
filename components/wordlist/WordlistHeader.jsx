@@ -13,12 +13,12 @@ export default function WordlistHeader({ wordNum, handleOnClick }) {
                     "No words added yet"
                 )}
             </span>
-            <WordListButton
+            {wordNum > 0 && <WordListButton
                 handleOnClick={handleOnClick}
                 content={"Export Wordlist"}
             >
                 <DownloadIcon />
-            </WordListButton>
+            </WordListButton>}
         </div>
     );
 }
