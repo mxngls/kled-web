@@ -76,7 +76,7 @@ export default function WordlistContainer() {
                 wordNum={data.length}
                 handleOnClick={handleOnClick}
             />
-            <WordlistBody data={data} setData={setData} />
+            {data.length > 0 && <WordlistBody data={data} setData={setData} />}
         </div>
     );
 }
