@@ -1,7 +1,7 @@
 .search-bar-container__input {
     text-align: left;
     background-color: inherit;
-    padding: 0 0 0 0.3rem;
+    padding-right: 0.3rem;
     width: 100%;
     border: none;
 }

@@ -1,7 +1,7 @@
 .search-bar-container,
 .search-bar-container--home {
     z-index: 8;
-    margin: 1rem 1rem 1rem 4rem;
+    margin: 0 2rem 0 2rem;
     width: 28.25rem;
     position: relative;
     display: flex;
@@ -10,7 +10,7 @@
     justify-content: flex-start;
 }
 
-.search-bar-container--main {
+.search-bar-container--home {
     margin: 0;
 }
 
@@ -31,7 +31,7 @@
         0 3px 14px 2px rgb(0 0 0 / 8%);
 }
 
-.search-bar-container--main .search-bar-container__input-wrap {
+.search-bar-container--home .search-bar-container__input-wrap {
     background-color: #ffff;
 }
 
@@ -39,15 +39,10 @@
     border: 1.70px solid rgb(190, 190, 190);
 }
 
-@media (max-width: 554px) {
-    .search-bar-container {
+@media (max-width: 515px) {
+    .search-bar-container--home {
+        width: auto;
         margin: 1rem;
     }
 }
 
-@media (max-width: 500px) {
-    .search-bar-container--main {
-        max-width: 17.5rem;
-        margin: 1rem;
-    }
-}
