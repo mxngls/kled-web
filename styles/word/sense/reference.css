@@ -19,12 +19,12 @@
 }
 
 .word-container__reference-type {
-    min-width: 5rem;
     margin-right: 1rem;
     width: max-content;
 }
 
 .word-container__reference-value {
+    min-width: 10rem;
     font-size: 110%;
 }
 
