@@ -32,10 +32,6 @@
     margin-right: 0.6em;
 }
 
-.word-container__hanja {
-    margin-bottom: 5px;
-}
-
 .word-container__match,
 .word-container__hangul {
     font-weight: 700;
