@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import SearchOptions from "./SearchOptionsContainer";
 import SearchInput from "./SearchInput";
 
-export default function SearchBarContainer({ main }) {
+export default function SearchBarContainer({ home }) {
     const [input, setInput] = useState({ keyword: "", matchType: "exact" });
     const [displayOptions, setDisplayOptions] = useState(false);
     const wrapperRef = useRef(false);
@@ -61,7 +61,7 @@ export default function SearchBarContainer({ main }) {
     }, [displayOptions]);
 
     return (
-        <div className={`search-bar-container${main ? "--main" : ""}`}>
+        <div className={`search-bar-container${home ? "--home" : ""}`}>
             <SearchInput
                 wrapperRef={wrapperRef}
                 keyword={input.keyword}
