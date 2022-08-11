@@ -26,7 +26,7 @@ import "../styles/content/contentFooterContainer.css";
 import "../styles/header/headerContainer.css"
 import "../styles/header/navbar.css";
 import "../styles/header/searchbar/searchbarContainer.css";
-import "../styles/header/searchbar/searchbarInput.css";
+import "../styles/header/searchbar/searchbarInputContainer.css";
 import "../styles/header/searchbar/searchOptionsContainer.css";
 import "../styles/header/searchbar/matchType.css";
 import "../styles/word/inflections.css";
