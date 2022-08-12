@@ -50,9 +50,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
     const data = getData(params.id);
-    return {
-        props: {
-            data,
-        },
-    };
+    if (data === "") {
+        return { notFound: true };
+    } else
+        return {
+            props: {
+                data,
+            },
+        };
 }
