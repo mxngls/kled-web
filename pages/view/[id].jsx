@@ -43,7 +43,7 @@ export async function getStaticPaths() {
     const paths = await getAllIds();
     return {
         paths,
-        fallback: false,
+        fallback: true,
     };
 }
 
@@ -54,5 +54,6 @@ export async function getStaticProps({ params }) {
         props: {
             data,
         },
+        revalidate: 60
     };
 }
