@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export default function ContentBody({ words, view }) {
+export default function ContentBody({ words }) {
     const router = useRouter();
     return (
         <div className={"content-container__body"}>
