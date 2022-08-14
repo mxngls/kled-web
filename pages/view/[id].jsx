@@ -21,7 +21,7 @@ export default function View({ word }) {
                     <WordContainer
                         detail={true}
                         last={true}
-                        data={{ item: data }}
+                        data={{ item: word }}
                         keyword={null}
                     >
                         <div style={{ margin: "1rem 0 1rem 0" }}>
@@ -49,13 +49,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
-    const data = getData(params.id);
-    if (data === "") {
+    const id = Number(params.id);
+    const word = await getWord(id);
+
+    if (!!word) {
+        return { props: { word }, revalidate: 86400 };
+    } else {
         return { notFound: true };
-    } else
-        return {
-            props: {
-                data,
-            },
-        };
+    }
 }
