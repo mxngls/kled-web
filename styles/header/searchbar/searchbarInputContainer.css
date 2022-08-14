@@ -16,7 +16,6 @@
 }
 
 .search-bar-container__input::placeholder {
-    font-size: 94%;
     font-family: 'Modern Era';
     letter-spacing: 0.015em;
     color: rgb(149, 149, 149);
