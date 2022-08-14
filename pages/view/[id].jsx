@@ -1,14 +1,14 @@
 import Layout from "../../components/Layout.jsx";
 import WordContainer from "../../components/word/WordContainer.jsx";
-import { getAllIds, getData } from "../../lib/view.js";
+import { getAllIds, getWord } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 
-export default function View({ data }) {
+export default function View({ word }) {
     const handleOnClick = () => {
-        const key = data.Id.toString();
+        const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
-            sessionStorage.setItem(key, JSON.stringify({ item: data }));
+            sessionStorage.setItem(key, JSON.stringify({ item: word }));
         } else {
             window.alert("Word has already been added.");
         }
