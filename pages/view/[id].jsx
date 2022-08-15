@@ -53,7 +53,7 @@ export async function getStaticProps({ params }) {
     const word = await getWord(id);
 
     if (!!word) {
-        return { props: { word }, revalidate: 5 };
+        return { props: { word } };
     } else {
         return { notFound: true };
     }
