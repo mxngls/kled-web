@@ -1,29 +1,33 @@
 .word-container__reference-container {
-    max-width: 20rem;
+    max-width: 30rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    border: solid 0.5px rgb(149, 149, 149);
     padding: 0.4em;
-    background-color: #eaecef;
     border-radius: 5px;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .word-container__reference-body {
-    padding: 0.5em;
+    vertical-align: middle;
+    padding: 0 0.5em 0 0.5em;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .word-container__reference-type {
-    margin-right: 1rem;
-    width: max-content;
+    overflow-wrap: break-word;
+    margin: 0.4rem 0 0.4rem 0;
+    width: 7rem;
 }
 
 .word-container__reference-value {
+    margin: 0.4rem 0 0.4rem 0;
     min-width: 10rem;
     font-size: 110%;
 }

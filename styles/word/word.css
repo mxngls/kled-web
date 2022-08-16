@@ -10,16 +10,15 @@
 }
 
 .word-container__body {
-    margin-left: 1em;
+    margin-left: 0;
 }
 
 .word-container__show-button--example,
 .word-container__show-button--view {
     width: fit-content;
-    background-color: #eaecef;
+    background-color: #F1F3F5;
     border: none;
     padding: 0.4em 0.8em 0.4em 0.8em;
-    margin: 0 0 0 3rem;
     border-radius: 15px;
 }
 
@@ -29,7 +28,7 @@
 
 .word-container__show-button--example:hover,
 .word-container__show-button--view:hover {
-    background-color: #F1F3F5;
+    background-color: #eaecef;
 }
 
 @media (max-width: 918px) {

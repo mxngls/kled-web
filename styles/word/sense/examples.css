@@ -1,28 +1,42 @@
 .word-container__examples-container {
     height: fit-content;
-    margin: 3rem 0 3rem 0;
+    margin: 2rem 0 3rem 0;
 }
 
-.word-container__examples-list {
+ul.word-container__examples-list {
+    list-style-type: none;
     text-decoration: none;
     margin-top: 0;
+    padding: 0;
 }
 
-.word-container__example,
-.word-container__example--convo {
-    margin-bottom: 1rem;
-    font-size: 110%;
-    padding-left: 0.5em;
+li.word-container__example,
+li.word-container__example--convo,
+li.word-container__example--phrase {
+    font-family: 'NamumSquare';
+    margin: 1.4rem 0 1.4rem 0;
+    font-weight: 300;
+    font-size: 115%;
+    padding-left: 0;
+    font-weight: 500;
 }
 
 .word-container__example--phrase {
     margin: 0;
     height: 0;
-    visibility: hidden;
+    display: none;
 }
 
 .word-container__example--convo {
     line-height: 2rem;
+}
+
+.word-container__example b,
+.word-container__example--convo b,
+.word-container__example--phrase b {
+    font-family: 'NamumSquare';
+    padding: 2px 0 2px 0;
+    background-color: #fff5e2;
 }
 
 @media (max-width: 565px) {

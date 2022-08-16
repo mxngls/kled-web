@@ -28,6 +28,18 @@
     border-bottom: 1.5px solid #202020;
 }
 
+@media (max-width: 781px) {
+
+    .navbar__link {
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+    }
+
+    .navbar__link:hover {
+        padding-bottom: calc(0.1em - 1.4px);
+    }
+}
+
 @media (max-width: 319px) {
 
     .navbar,
