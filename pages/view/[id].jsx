@@ -4,7 +4,9 @@ import { getAllIds, getWord } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 import { useRouter } from "next/router.js";
+
 export default function View({ word }) {
+    const router = useRouter()
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
