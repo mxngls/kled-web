@@ -26,12 +26,15 @@
 
 .word-container__hangul,
 .word-container__hanja {
-    font-family: 'NamumSquare' Arial, Helvetica, sans-serif;
     color: black;
     display: flex;
     font-size: 160%;
     margin: 0;
     margin-right: 0.6em;
+}
+
+.word-container__hangul {
+    font-family: 'NamumSquare' Arial, Helvetica, sans-serif;
 }
 
 .word-container__match {
