@@ -1,6 +1,6 @@
-import { getData } from "../../lib/search.js";
-import Layout from "../../components/Layout.jsx";
-import ContentContainer from "../../components/content/ContentContainer.jsx";
+import { getData } from "../../../lib/search.js";
+import Layout from "../../../components/Layout.jsx";
+import ContentContainer from "../../../components/content/ContentContainer.jsx";
 
 export default function Results({ data, db, setDb, objects }) {
     return (
