@@ -10,10 +10,10 @@ export default function Reference({ references, id, index }) {
                         className="word-container__reference-body"
                         key={`${id}-sense-${index}-ref-${i}`}
                     >
-                        <b className="word-container__reference-type">
+                        <span className="word-container__reference-type">
                             {reference.Type}
                             {":"}
-                        </b>
+                        </span>
                         {!!reference.Id ? (
                             <Link href={`/view/${reference.Id}`}>
                                 <a
