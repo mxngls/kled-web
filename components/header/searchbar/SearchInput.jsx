@@ -22,7 +22,7 @@ export default function SearchInput({
     const handleOnSubmit = (event) => {
         event.preventDefault();
         router.push({
-            pathname: `/search`,
+            pathname: `/search/search`,
             query: {
                 keyword: keyword,
                 matchType: matchType,

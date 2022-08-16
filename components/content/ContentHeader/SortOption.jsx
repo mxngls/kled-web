@@ -15,7 +15,7 @@ export default function SortOption({
             setOption(option);
             router.replace(
                 {
-                    pathname: `/search`,
+                    pathname: `/search/search`,
                     query: {
                         keyword: router.query.keyword,
                         matchType: router.query.matchType,

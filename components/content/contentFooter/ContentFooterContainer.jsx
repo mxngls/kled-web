@@ -18,7 +18,7 @@ export default function ContentFooterContainer({
     const changeRoute = (option) => {
         router.replace(
             {
-                pathname: `/search`,
+                pathname: `/search/search`,
                 query: {
                     keyword: keyword,
                     matchType: matchType,
@@ -27,7 +27,7 @@ export default function ContentFooterContainer({
                 },
             },
             {
-                pathname: `/search`,
+                pathname: `/search/search`,
                 query: {
                     keyword: keyword,
                     matchType: matchType,
