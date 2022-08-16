@@ -10,11 +10,11 @@ export default function SenseBody({
 }) {
     return (
         <dl className="word-container__sense-body">
-            <span className="word-container__definition">{definition}</span>
-            {!!examples && <Examples examples={examples} />}
+            <span className="word-container__definition">{definition}</span>{" "}
             {!!references && (
                 <Reference references={references} index={index} id={id} />
             )}
+            {!!examples && <Examples examples={examples} />}
         </dl>
     );
 }
