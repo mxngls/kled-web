@@ -4,7 +4,7 @@ import SenseHeader from "./SenseHeader";
 export default function Sense({ detail, data, id, keyword }) {
     return data.map((sense, index) => (
         <dl
-            className={`word-container__sense-container${detail ? "--detail" : ""}`}
+            className={`word-container__sense-container${ (index !== -1 && detail) ? "--detail" : ""}`}
             key={`${id}-sense-${index}`}
         >
             <SenseHeader
