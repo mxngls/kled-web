@@ -3,7 +3,7 @@ import SearchOptions from "./SearchOptionsContainer";
 import SearchInput from "./SearchInput";
 
 export default function SearchBarContainer({ home }) {
-    const [input, setInput] = useState({ keyword: "", matchType: "exact" });
+    const [input, setInput] = useState({ keyword: "", matchType: "include" });
     const [displayOptions, setDisplayOptions] = useState(false);
     const wrapperRef = useRef(false);
 

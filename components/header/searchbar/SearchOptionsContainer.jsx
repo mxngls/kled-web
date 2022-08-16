@@ -19,7 +19,7 @@ export default function SearchOptions({
                 value={"exact"}
                 setInput={setInput}
                 setDisplayOptions={setDisplayOptions}
-                checked={true}
+                checked={false}
             />
             <MatchType
                 matchType={matchType}
@@ -37,7 +37,7 @@ export default function SearchOptions({
                 value={"include"}
                 setInput={setInput}
                 setDisplayOptions={setDisplayOptions}
-                checked={false}
+                checked={true}
             />
         </div>
     );
