@@ -2,7 +2,7 @@
 .search-bar-container--home {
     z-index: 8;
     margin: 0 2rem 0 2rem;
-    width: 28.25rem;
+    width: 29rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -36,8 +36,13 @@
 }
 
 .search-bar-container__input-wrap:focus-within {
-    border: 1.70px solid rgb(190, 190, 190);
+    border: 1.70px solid #209be0;
+    box-shadow:
+        0 3px 3px -1px #209be011,
+        0 8px 30px 1px #209be011,
+        0 3px 14px 2px #209be011;
 }
+
 
 @media (max-width: 515px) {
     .search-bar-container--home {
@@ -45,4 +50,3 @@
         margin: 1rem;
     }
 }
-
