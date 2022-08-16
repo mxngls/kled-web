@@ -1,10 +1,14 @@
 .word-container__sense-container {
     margin-right: 5rem
+    margin-right: 5rem;
+    margin-top: 2rem;
 }
 
 .word-container__sense-container--detail {
+    margin-right: 5rem;
     margin-top: 2rem;
     border-bottom: 1px dashed #eaecef;
+    border-bottom: 1px dashed #eaecef
 }
 
 .word-container__sense-header {
