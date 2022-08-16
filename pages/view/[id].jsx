@@ -3,7 +3,7 @@ import WordContainer from "../../components/word/WordContainer.jsx";
 import { getAllIds, getWord } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
-
+import { useRouter } from "next/router.js";
 export default function View({ word }) {
     const handleOnClick = () => {
         const key = word.Id.toString();
@@ -13,6 +13,18 @@ export default function View({ word }) {
             window.alert("Word has already been added.");
         }
     };
+
+    // If the page is not yet generated, this will be displayed
+    // initially until getStaticProps() finishes running
+    if (router.isFallback) {
+        return (
+            <Layout>
+                <div className="content-container">
+                    <h1>Loading...</h1>
+                </div>
+            </Layout>
+        );
+    }
 
     return (
         <Layout>
