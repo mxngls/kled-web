@@ -6,7 +6,7 @@ import AddIcon from "../../components/icons/AddIcon.jsx";
 import { useRouter } from "next/router.js";
 
 export default function View({ word }) {
-    const router = useRouter()
+    const router = useRouter();
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
@@ -63,12 +63,15 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
-    const id = Number(params.id);
-    const word = await getWord(id);
-
-    if (!!word) {
-        return { props: { word }, revalidate: 60 };
-    } else {
-        return { notFound: true };
+    try {
+        const id = Number(params.id);
+        const word = await getWord(id);
+        if (!!word) {
+            return { props: { word }, revalidate: 60 };
+        } else {
+            return { notFound: true };
+        }
+    } catch (err) {
+        console.log(err);
     }
 }
