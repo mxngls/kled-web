@@ -19,3 +19,26 @@
   font-weight: 200;
   src: url(../public/fonts/ModernEra-Light.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'NamumSquare';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../public/fonts/NanumSquareR.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NamumSquare';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../public/fonts/NanumSquareB.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'NamumSquare';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../public/fonts/NanumSquareL.ttf) format('truetype');
+}
+
