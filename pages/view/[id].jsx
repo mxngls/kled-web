@@ -5,8 +5,6 @@ import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 
 import { useRouter } from "next/router.js";
-import batchOne from "../../data/dict_FULL_batch_1.json";
-import batchSecond from "../../data/dict_FULL_batch_2.json";
 
 export default function View({ word }) {
     const router = useRouter();
@@ -54,36 +52,21 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     // Fetch necessary data for the blog post using params.id
-    const sortedIdsA = batchOne.sort((a, b) => a.Id - b.Id);
-    const sortedIdsB = batchSecond.sort((a, b) => a.Id - b.Id);
-    const id = parseInt(context.params.id, 10);
-
-    async function getWord(sortedIds, id) {
-        let low = 0;
-        let high = sortedIds.length - 1;
-        while (low <= high) {
-            if (id > sortedIds[high]) {
-                return null;
-            }
-            let mid = Math.floor((low + high) / 2);
-            if (sortedIds[mid].Id < id) {
-                low = mid + 1;
-            } else if (sortedIds[mid].Id > id) {
-                high = mid - 1;
-            } else {
-                return sortedIds[mid];
-            }
-        }
-        return null;
-    }
+    const headers = {
+        apikey: process.env.SUPABASE_APIKEY,
+        Authorization: process.env.SUPABASE_AUTH,
+        "Content-Type": "application/json",
+    };
+    const word = await fetch(
+        `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/dict?id=eq.${context.params.id}`,
+        { headers }
+    )
+        .then((res) => res.json())
+        .then((json) => JSON.parse(json[0].content));
 
     try {
-        let word = await getWord(sortedIdsA, id);
-        if (word === null) {
-            word = await getWord(sortedIdsB, id);
-        }
-        if (word !== null) {
-            return { props: { word }, revalidate: 1 };
+        if (word !== undefined) {
+            return { props: { word } };
         } else {
             return { notFound: true };
         }
