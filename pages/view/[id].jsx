@@ -3,38 +3,10 @@ import WordContainer from "../../components/word/WordContainer.jsx";
 import { getAllIds } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
-import { useEffect, useState, useRef } from "react";
 
 import { envVar } from "../../next.config.js";
 
-export default function View({ id }) {
-    const [data, setData] = useState(null);
-    const initialRef = useRef(false);
-    useEffect(() => {
-        async function fetchData(id) {
-            // Fetch necessary data for the blog post using params.id
-            initialRef.current = true;
-
-            const headers = {
-                apikey: envVar.key,
-                Authorization: envVar.auth,
-                "Content-Type": "application/json",
-            };
-
-            fetch(
-                `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/dict?id=eq.${id}`,
-                { headers }
-            )
-                .then((res) => {
-                    if (!res.ok) {
-                        throw new Error(`HTTP error! Status: ${res.status}`);
-                    }
-                    return res.json();
-                })
-                .then((json) => setData(JSON.parse(json[0].content)));
-        }
-        fetchData(id);
-    }, [id]);
+export default function View({ word }) {
 
     const handleOnClick = () => {
         const key = word.Id.toString();
@@ -49,11 +21,11 @@ export default function View({ id }) {
         <Layout>
             <div className="content-container">
                 <div className="content-container__body--view">
-                    {!!data && (
+                    {!!word && (
                         <WordContainer
                             detail={true}
                             last={true}
-                            data={{ item: data }}
+                            data={{ item: word }}
                             keyword={null}
                         >
                             <div style={{ margin: "1rem 0 1rem 0" }}>
@@ -82,5 +54,28 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     const id = context.params.id;
-    return { props: { id } };
+    async function fetchData(id) {
+        // Fetch necessary data for the blog post using params.id
+
+        const headers = {
+            apikey: envVar.key,
+            Authorization: envVar.auth,
+            "Content-Type": "application/json",
+        };
+
+        return fetch(
+            `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/dict?id=eq.${id}`,
+            { headers }
+        ).then((res) => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        });
+    }
+    const word = await fetchData(id).then((json) =>
+        JSON.parse(json[0].content)
+    );
+
+    return { props: { word } };
 }
