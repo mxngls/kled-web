@@ -2,6 +2,10 @@ const path = require("path");
 
 module.exports = {
     swcMinify: true,
+    envVar: {
+        key: process.env.NEXT_PUBLIC_SUPABASE_APIKEY,
+        auth: process.env.NEXT_PUBLIC_SUPABASE_AUTH,
+    },
     webpack: (config, { isServer }) => {
         if (!isServer) {
             config.resolve.fallback.fs = false;
