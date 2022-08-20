@@ -54,15 +54,23 @@ export async function getStaticProps(context) {
         Authorization: process.env.SUPABASE_AUTH,
         "Content-Type": "application/json",
     };
-    const word = await fetch(
+
+    let word = null;
+
+    word = await fetch(
         `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/dict?id=eq.${context.params.id}`,
         { headers }
     )
-        .then((res) => res.json())
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
         .then((json) => JSON.parse(json[0].content));
 
     try {
-        if (word !== undefined) {
+        if (word !== null) {
             return { props: { word } };
         } else {
             return { notFound: true };
