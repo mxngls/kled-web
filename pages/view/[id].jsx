@@ -3,8 +3,39 @@ import WordContainer from "../../components/word/WordContainer.jsx";
 import { getAllIds } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
+import { useEffect, useState, useRef } from "react";
 
-export default function View({ word }) {
+import { envVar } from "../../next.config.js";
+
+export default function View({ id }) {
+    const [data, setData] = useState(null);
+    const initialRef = useRef(false);
+    useEffect(() => {
+        async function fetchData(id) {
+            // Fetch necessary data for the blog post using params.id
+            initialRef.current = true;
+
+            const headers = {
+                apikey: envVar.key,
+                Authorization: envVar.auth,
+                "Content-Type": "application/json",
+            };
+
+            fetch(
+                `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/dict?id=eq.${id}`,
+                { headers }
+            )
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((json) => setData(JSON.parse(json[0].content)));
+        }
+        fetchData(id);
+    }, [id]);
+
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
@@ -18,21 +49,23 @@ export default function View({ word }) {
         <Layout>
             <div className="content-container">
                 <div className="content-container__body--view">
-                    <WordContainer
-                        detail={true}
-                        last={true}
-                        data={{ item: word }}
-                        keyword={null}
-                    >
-                        <div style={{ margin: "1rem 0 1rem 0" }}>
-                            <WordListButton
-                                handleOnClick={handleOnClick}
-                                content={"Add to Wordlist"}
-                            >
-                                <AddIcon />
-                            </WordListButton>
-                        </div>
-                    </WordContainer>
+                    {!!data && (
+                        <WordContainer
+                            detail={true}
+                            last={true}
+                            data={{ item: data }}
+                            keyword={null}
+                        >
+                            <div style={{ margin: "1rem 0 1rem 0" }}>
+                                <WordListButton
+                                    handleOnClick={handleOnClick}
+                                    content={"Add to Wordlist"}
+                                >
+                                    <AddIcon />
+                                </WordListButton>
+                            </div>
+                        </WordContainer>
+                    )}
                 </div>
             </div>
         </Layout>
@@ -48,34 +81,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    // Fetch necessary data for the blog post using params.id
-    const headers = {
-        apikey: process.env.SUPABASE_APIKEY,
-        Authorization: process.env.SUPABASE_AUTH,
-        "Content-Type": "application/json",
-    };
-
-    let word = null;
-
-    word = await fetch(
-        `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/dict?id=eq.${context.params.id}`,
-        { headers }
-    )
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error(`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then((json) => JSON.parse(json[0].content));
-
-    try {
-        if (word !== null) {
-            return { props: { word } };
-        } else {
-            return { notFound: true };
-        }
-    } catch (err) {
-        console.log(err);
-    }
+    const id = context.params.id;
+    return { props: { id } };
 }
