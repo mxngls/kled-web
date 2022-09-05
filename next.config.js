@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     swcMinify: true,
-    envVar: {
+    env: {
         key: process.env.NEXT_PUBLIC_SUPABASE_APIKEY,
         auth: process.env.NEXT_PUBLIC_SUPABASE_AUTH,
     },
@@ -20,5 +20,4 @@ module.exports = {
         });
         return config;
     },
-    webpackDevMiddleware: (config) => config,
 };
