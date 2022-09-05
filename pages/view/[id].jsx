@@ -4,10 +4,9 @@ import { getAllIds } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 
-import { envVar } from "../../next.config.js";
+import { env } from "../../next.config.js";
 
 export default function View({ word }) {
-
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
@@ -58,8 +57,8 @@ export async function getStaticProps(context) {
         // Fetch necessary data for the blog post using params.id
 
         const headers = {
-            apikey: envVar.key,
-            Authorization: envVar.auth,
+            apikey: env.key,
+            Authorization: env.auth,
             "Content-Type": "application/json",
         };
 
