@@ -15,5 +15,8 @@ I started this project initially for two reasons:
 As KLED is entirely based upon the original version of the National Insitute of Korean language the underlying data does - excempt for some corrections I made to certain wrong entries during development - not differ at all. The main differences are the ones highlighted above. 
 As this application is deployed on Vercel and thus over a CDN loading times are noticeably faster (Though if you are located in Korea the original one may at times be faster; but from experience loading times seem to vary quite remarkelby on a day-to-day basis.).
 
+## To-DOs
 
+- [ ] Adopt Typscript and convert files to .ts/.tsx
+- [ ] Rewrite search to get elements from backend and discard dictionary files
 
