@@ -72,9 +72,17 @@ export async function getStaticProps(context) {
             return res.json();
         });
     }
-    const word = await fetchData(id).then((json) =>
-        JSON.parse(json[0].content)
-    );
+    const word = await fetchData(id).then((json) => {
+        if (json.length > 0) {
+            return JSON.parse(json[0].content);
+        } else {
+            return null;
+        }
+    });
 
-    return { props: { word } };
+    if (word !== null) {
+        return { props: { word } };
+    } else {
+        return { notFound: true };
+    }
 }
