@@ -46,7 +46,7 @@ export default function ContentContainer({ data }) {
                             data={element}
                             keyword={router.query.keyword}
                         >
-                            {element.item.Inflections === "" && (
+                            {element.item.Inflection === null && (
                                 <GoToViewButton id={element.item.Id} />
                             )}
                         </WordContainer>

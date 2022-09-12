@@ -1,10 +1,8 @@
 import Layout from "../../components/Layout.jsx";
 import WordContainer from "../../components/word/WordContainer.jsx";
-import { getAllIds } from "../../lib/view.js";
+import { fetchViewData, getMostFrequent } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
-
-import { env } from "../../next.config.js";
 
 export default function View({ word }) {
     const handleOnClick = () => {
@@ -44,7 +42,7 @@ export default function View({ word }) {
 }
 
 export async function getStaticPaths() {
-    const paths = await getAllIds();
+    const paths = await getMostFrequent();
     return {
         paths,
         fallback: "blocking",
@@ -52,37 +50,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const id = context.params.id;
-    async function fetchData(id) {
-        // Fetch necessary data for the blog post using params.id
+    const word = await fetchViewData(Number(context.params.id));
 
-        const headers = {
-            apikey: env.key,
-            Authorization: env.auth,
-            "Content-Type": "application/json",
-        };
-
-        return fetch(
-            `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/dict?id=eq.${id}`,
-            { headers }
-        ).then((res) => {
-            if (!res.ok) {
-                throw new Error(`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        });
-    }
-    const word = await fetchData(id).then((json) => {
-        if (json.length > 0) {
-            return JSON.parse(json[0].content);
-        } else {
-            return null;
-        }
-    });
-
-    if (word !== null) {
-        return { props: { word } };
-    } else {
+    if (word === null) {
         return { notFound: true };
     }
+
+    return { props: { word } };
 }
