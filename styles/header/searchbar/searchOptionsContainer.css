@@ -5,9 +5,9 @@
     overflow: hidden;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
     top: 4rem;
     height: 0;
+    width: 21.5rem;
     visibility: hidden;
     transition: 0.3s ease;
     border-radius: 10px;

@@ -24,15 +24,6 @@ export default function SearchOptions({
             <MatchType
                 matchType={matchType}
                 wrapperRef={wrapperRef}
-                id={"match-type-fuzzy"}
-                value={"fuzzy"}
-                setInput={setInput}
-                setDisplayOptions={setDisplayOptions}
-                checked={false}
-            />
-            <MatchType
-                matchType={matchType}
-                wrapperRef={wrapperRef}
                 id={"match-type-include"}
                 value={"include"}
                 setInput={setInput}

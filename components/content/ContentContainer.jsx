@@ -26,11 +26,7 @@ export default function ContentContainer({ data }) {
                 ? copy.sort((a, b) => {
                       return a.item.Alpha - b.item.Alpha;
                   })
-                : sort === "accuracy"
-                ? copy.sort((a, b) => {
-                      return a.score - b.score;
-                  })
-                : null;
+                : sort === "accuracy";
             setState((prevState) => ({
                 ...prevState,
                 words: copy.map((element, index, copy) => {

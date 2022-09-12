@@ -25,7 +25,7 @@ export default function SortOptionsContainer({
 
     useEffect(() => {
         if (display) {
-            wrapperRef.current.style.height = "95.969px";
+            wrapperRef.current.style.height = "70px";
             wrapperRef.current.style.visibility = "visible";
         } else {
             wrapperRef.current.style.height = "0";
@@ -48,14 +48,6 @@ export default function SortOptionsContainer({
                     wrapperRef={wrapperRef}
                     content={"Sort by: Name"}
                     mode={"name"}
-                    option={option}
-                    setOption={setOption}
-                    setDisplay={setDisplay}
-                />
-                <SortOption
-                    wrapperRef={wrapperRef}
-                    content={"Sort by: Accuracy"}
-                    mode={"accuracy"}
                     option={option}
                     setOption={setOption}
                     setDisplay={setDisplay}

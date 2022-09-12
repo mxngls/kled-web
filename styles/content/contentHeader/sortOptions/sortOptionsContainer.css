@@ -13,8 +13,8 @@
 }
 
 .sort-options-container__list {
-    padding-left: 0rem;
-    margin: 0.5rem;
+    margin: 0;
+    padding: 0.5rem;
     list-style: none;
     list-style-position: outside;
 }
