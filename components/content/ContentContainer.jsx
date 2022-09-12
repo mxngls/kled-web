@@ -18,7 +18,7 @@ export default function ContentContainer({ data }) {
         (sort) => {
             const copy = [].concat(data);
 
-            sort === "frequency" || null
+            sort === "frequency"
                 ? copy.sort((a, b) => {
                       return a.item.Frequency - b.item.Frequency;
                   })
@@ -26,7 +26,7 @@ export default function ContentContainer({ data }) {
                 ? copy.sort((a, b) => {
                       return a.item.Alpha - b.item.Alpha;
                   })
-                : sort === "accuracy";
+                : null;
             setState((prevState) => ({
                 ...prevState,
                 words: copy.map((element, index, copy) => {
