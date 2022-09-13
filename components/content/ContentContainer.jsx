@@ -9,7 +9,7 @@ import ContentBody from "./ContentBody";
 
 import GoToViewButton from "../GoToViewButton";
 
-export default function ContentContainer({ data }) {
+export default function ContentContainer({ data, keyword, resNum }) {
     const router = useRouter();
     const [state, setState] = useState({ words: [] });
     const [option, setOption] = useState(router.query.sort);
@@ -60,7 +60,8 @@ export default function ContentContainer({ data }) {
     return (
         <div className="content-container">
             <ContentHeader
-                resNum={data.length}
+                resNum={resNum}
+                keyword={keyword}
                 option={option}
                 setOption={setOption}
             />

@@ -3,7 +3,7 @@ import { useState } from "react";
 import SortIcon from "../../icons/SortIcon";
 import SortOptionsContainer from "./SortOptionsContainer";
 
-export default function ContentHeaderContainer({ resNum, option, setOption }) {
+export default function ContentHeaderContainer({ resNum, keyword, option, setOption }) {
     const router = useRouter();
     const [display, setDisplay] = useState(false);
 
@@ -22,7 +22,7 @@ export default function ContentHeaderContainer({ resNum, option, setOption }) {
                 Found <b>{resNum}</b> results for &quot;
                 {
                     <span className="content-container__keyword">
-                        {router.query.keyword}
+                        {keyword}
                     </span>
                 }
                 &quot;
