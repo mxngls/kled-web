@@ -23,6 +23,7 @@ main {
   min-height: 72vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 input {
