@@ -76,11 +76,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const word = await fetchViewData(Number(context.params.id));
+    const data = await fetchViewData(Number(context.params.id));
 
-    if (word === null) {
+    if (data === null) {
         return { notFound: true };
     }
 
-    return { props: { word } };
+    return { props: { data } };
 }
