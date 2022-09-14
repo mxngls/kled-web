@@ -18,7 +18,7 @@ export default function ContentBody({ data, option }) {
                 : null;
             setState((prevState) => ({ ...prevState, words: copy }));
         },
-        [option, router.query.sort, state.words]
+        [option, router.query.sort]
     );
 
     useEffect(() => {
