@@ -3,20 +3,21 @@ import ContentContainer from "../../../components/content/ContentContainer.jsx";
 
 import { env } from "../../../next.config.js";
 import { useRouter } from "next/router.js";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { SpinnerCircularFixed } from "spinners-react";
 
-export default function Results({ db, setDb, objects }) {
+export default function Results() {
+    const abortController = useRef();
     const router = useRouter();
-    const [words, setWords] = useState({
+    const [data, setData] = useState({
         words: null,
         keyword: router.query.keyword,
     });
 
     useEffect(() => {
         const handleRouteChange = () => {
-            setWords({ words: null, keyword: router.query.keyword });
+            setData({ words: null, keyword: router.query.keyword });
         };
 
         router.events.on("routeChangeStart", handleRouteChange);
@@ -27,7 +28,6 @@ export default function Results({ db, setDb, objects }) {
     }, []);
 
     useEffect(() => {
-        console.log("Rendered page");
         async function fetchSearchData(keyword, matchType) {
             // Fetch data from external database
             const headers = {
@@ -38,65 +38,71 @@ export default function Results({ db, setDb, objects }) {
 
             const data = JSON.stringify({ term: keyword });
 
-            const res = await fetch(
-                `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/rpc/search_${matchType}`,
-                { method: "POST", headers: headers, body: data }
-            );
+            // Cancel active fetch when there is a new request
+            if (abortController.current) {
+                abortController.current.abort();
+            }
 
-            const json = await res.json();
-            if (json !== null) {
-                setWords({
-                    words: json,
-                    keyword: keyword,
-                });
-            } else setWords("notFound");
+            abortController.current = new AbortController();
+            const { signal } = abortController.current;
+
+            try {
+                const res = await fetch(
+                    `https://wedfhdkwmzdpwjclumxq.supabase.co/rest/v1/rpc/search_${matchType}`,
+                    {
+                        method: "POST",
+                        headers: headers,
+                        body: data,
+                        signal: signal,
+                    }
+                );
+
+                const json = await res.json();
+                if (json !== null) {
+                    setData({
+                        words: json,
+                        keyword: keyword,
+                    });
+                } else setData("notFound");
+            } catch (error) {
+                if (!error instanceof DOMException) {
+                    console.log(error);
+                }
+            }
         }
-        console.log(words);
-        console.log(router.query);
+
         if (router.isReady)
             fetchSearchData(router.query.keyword, router.query.matchType);
+
+        return () => {};
     }, [router.query.keyword]);
 
-    if (words.words === null) {
+    if (data.words === null) {
         return (
-            <>
-                <Layout
-                    db={db}
-                    setDb={setDb}
-                    objects={objects}
-                    keyword={router}
+            <Layout>
+                <div
+                    style={{
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
                 >
-                    <div
-                        style={{
-                            height: "100%",
-                            display: "flex",
-                            justifyContent: "center"
-                        }}
-                    >
-                        <SpinnerCircularFixed
-                            size={115}
-                            color={"#209be0"}
-                            secondaryColor={"#eaecef"}
-                            speed={140}
-                        />
-                    </div>
-                </Layout>
-            </>
+                    <SpinnerCircularFixed
+                        size={115}
+                        color={"black"}
+                        secondaryColor={"lightGrey"}
+                        speed={140}
+                    />
+                </div>
+            </Layout>
         );
-    } else if (words === "notFound") {
+    } else if (data === "notFound") {
         router.replace("/404", router.asPath);
     } else {
         return (
-            <>
-                <Layout db={db} setDb={setDb} objects={objects}>
-                    <ContentContainer
-                        search={true}
-                        data={words.words}
-                        keyword={words.keyword}
-                        resNum={words.words.length}
-                    />
-                </Layout>
-            </>
+            <Layout>
+                <ContentContainer search={true} data={data} setData={setData} />
+            </Layout>
         );
     }
 }
