@@ -5,6 +5,7 @@ import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 
 export default function View({ word }) {
+import { SpinnerCircularFixed } from "spinners-react";
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
@@ -13,6 +14,31 @@ export default function View({ word }) {
             window.alert("Word has already been added.");
         }
     };
+
+    if (word === null) {
+        return (
+            <Layout>
+                <div className="content-container">
+                    <div className="content-container__body--view">
+                        <div
+                            style={{
+                                height: "100%",
+                                display: "flex",
+                                justifyContent: "flex-start",
+                            }}
+                        >
+                            <SpinnerCircularFixed
+                                size={115}
+                                color={"black"}
+                                secondaryColor={"lightGrey"}
+                                speed={140}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </Layout>
+        );
+    }
 
     return (
         <Layout>
