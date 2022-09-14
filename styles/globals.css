@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  min-height: 72vh;
+  min-height: 84vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,10 +62,6 @@ h4 {
   color: rgb(149, 149, 149);
   font-weight: 300;
   margin: 0 0 3rem 0;
-}
-
-a {
-  color: #209be0;
 }
 
 a:hover {
