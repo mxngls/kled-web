@@ -89,7 +89,7 @@ export default function WordlistContainer() {
                         justifyContent: "center",
                     }}
                 >
-                    <h2>"No words added yet"</h2>
+                    <h2>No words added yet</h2>
                 </div>
             )}
         </>
