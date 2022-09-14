@@ -1,11 +1,21 @@
 import Layout from "../../components/Layout.jsx";
 import WordContainer from "../../components/word/WordContainer.jsx";
-import { fetchViewData, getMostFrequent } from "../../lib/view.js";
 import WordListButton from "../../components/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 
-export default function View({ word }) {
+import { fetchViewData, getMostFrequent } from "../../lib/view.js";
+
+import { useEffect, useState } from "react";
+
 import { SpinnerCircularFixed } from "spinners-react";
+
+export default function View({ data }) {
+    const [word, setWord] = useState(null);
+
+    useEffect(() => {
+        setWord(data);
+    }, []);
+
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
@@ -45,23 +55,21 @@ import { SpinnerCircularFixed } from "spinners-react";
         <Layout>
             <div className="content-container">
                 <div className="content-container__body--view">
-                    {!!word && (
-                        <WordContainer
-                            detail={true}
-                            last={true}
-                            data={{ item: word }}
-                            keyword={null}
-                        >
-                            <div style={{ margin: "1rem 0 1rem 0" }}>
-                                <WordListButton
-                                    handleOnClick={handleOnClick}
-                                    content={"Add to Wordlist"}
-                                >
-                                    <AddIcon />
-                                </WordListButton>
-                            </div>
-                        </WordContainer>
-                    )}
+                    <WordContainer
+                        detail={true}
+                        last={true}
+                        data={{ item: word }}
+                        keyword={null}
+                    >
+                        <div style={{ margin: "1rem 0 1rem 0" }}>
+                            <WordListButton
+                                handleOnClick={handleOnClick}
+                                content={"Add to Wordlist"}
+                            >
+                                <AddIcon />
+                            </WordListButton>
+                        </div>
+                    </WordContainer>
                 </div>
             </div>
         </Layout>
