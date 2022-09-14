@@ -5,20 +5,14 @@ export default function WordlistHeader({ wordNum, handleOnClick }) {
     return (
         <div className="wordlist-container__header">
             <span className="wordlist-container__description">
-                {wordNum > 0 ? (
-                    <>
-                        Wordlist consist of <b>{wordNum}</b> words
-                    </>
-                ) : (
-                    "No words added yet"
-                )}
+                Wordlist consist of <b>{wordNum}</b> words
             </span>
-            {wordNum > 0 && <WordListButton
+            <WordListButton
                 handleOnClick={handleOnClick}
                 content={"Export Wordlist"}
             >
                 <DownloadIcon />
-            </WordListButton>}
+            </WordListButton>
         </div>
     );
 }

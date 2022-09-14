@@ -71,12 +71,27 @@ export default function WordlistContainer() {
     };
 
     return (
-        <div className="wordlist-container">
-            <WordlistHeader
-                wordNum={data.length}
-                handleOnClick={handleOnClick}
-            />
-            {data.length > 0 && <WordlistBody data={data} setData={setData} />}
-        </div>
+        <>
+            {data.length > 0 ? (
+                <div className="wordlist-container">
+                    <WordlistHeader
+                        wordNum={data.length}
+                        handleOnClick={handleOnClick}
+                    />
+                    {data.length > 0 && (
+                        <WordlistBody data={data} setData={setData} />
+                    )}
+                </div>
+            ) : (
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
+                    <h2>"No words added yet"</h2>
+                </div>
+            )}
+        </>
     );
 }
