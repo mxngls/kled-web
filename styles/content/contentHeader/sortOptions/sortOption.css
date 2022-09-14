@@ -9,7 +9,6 @@
 }
 
 .sort-option-container__sort-option--active {
-    color: #209be0;
     cursor:default;
     padding: 0.3rem
 }

@@ -20,7 +20,7 @@
 }
 
 .search-bar-container__match-type--active {
-    color: #209be0;
+    color: black;
 }
 
 .search-bar-container__match-type:hover {
@@ -35,11 +35,11 @@
 }
 
 .search-bar-container__match-type--active .search-bar-container__match-type-checkmark {
-    border: 1px solid #209be0;
+    border: 1px solid black;
 }
 
 .search-bar-container__match-type--active:hover .search-bar-container__match-type-checkmark {
-    border: 1px solid #209be0;
+    border: 1px solid black;
 }
 
 .search-bar-container__match-type-input {
@@ -59,11 +59,11 @@
 }
 
 .search-bar-container__match-type:hover .search-bar-container__match-type-checkmark {
-    border: 1px solid #209be0
+    border: 1px solid black
 }
 
 input.search-bar-container__match-type-input:checked+.search-bar-container__match-type-checkmark {
-    background-color: #209be0;
+    background-color: black;
 }
 
 @media (max-width: 530px) {

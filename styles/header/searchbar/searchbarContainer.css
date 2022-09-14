@@ -36,7 +36,7 @@
 }
 
 .search-bar-container__input-wrap:focus-within {
-    border: 1.70px solid #209be0;
+    border: 1.70px solid black;
     box-shadow:
         0 3px 3px -1px #209be011,
         0 8px 30px 1px #209be011,
