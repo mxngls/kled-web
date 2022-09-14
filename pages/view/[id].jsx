@@ -5,16 +5,9 @@ import AddIcon from "../../components/icons/AddIcon.jsx";
 
 import { fetchViewData, getMostFrequent } from "../../lib/view.js";
 
-import { useEffect, useState } from "react";
-
 import { SpinnerCircularFixed } from "spinners-react";
 
-export default function View({ data }) {
-    const [word, setWord] = useState(null);
-
-    useEffect(() => {
-        setWord(data);
-    }, []);
+export default function View({ word }) {
 
     const handleOnClick = () => {
         const key = word.Id.toString();
@@ -85,11 +78,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const data = await fetchViewData(Number(context.params.id));
+    const word = await fetchViewData(Number(context.params.id));
 
-    if (data === null) {
+    if (word === null) {
         return { notFound: true };
     }
 
-    return { props: { data } };
+    return { props: { word } };
 }
