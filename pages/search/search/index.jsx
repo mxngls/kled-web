@@ -75,7 +75,7 @@ export default function Results() {
             fetchSearchData(router.query.keyword, router.query.matchType);
 
         return () => {};
-    }, [router.query.keyword]);
+    }, [router.query.keyword, router.isReady]);
 
     if (data.words === null) {
         return (
