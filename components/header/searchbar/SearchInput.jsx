@@ -21,15 +21,19 @@ export default function SearchInput({
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
-        router.push({
-            pathname: `/search/search`,
-            query: {
-                keyword: keyword,
-                matchType: matchType,
-                sort: "frequency",
-                batch: 0,
-            },
-        });
+        if (keyword === "") {
+            window.alert("Input a word to look for.");
+        } else if (keyword !== router.query.keyword) {
+            router.push({
+                pathname: `/search/search`,
+                query: {
+                    keyword: keyword,
+                    matchType: matchType,
+                    sort: "frequency",
+                    batch: 0,
+                },
+            });
+        }
     };
 
     const handleEmptyPrompt = () => {
