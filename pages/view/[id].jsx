@@ -10,6 +10,7 @@ import { SpinnerCircularFixed } from "spinners-react";
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
             sessionStorage.setItem(key, JSON.stringify({ item: word }));
+            window.alert("Added word to wordlist.");
         } else {
             window.alert("Word has already been added.");
         }
