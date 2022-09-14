@@ -3,7 +3,8 @@
     display: flex;
     justify-content: flex-start;
     flex-flow: column;
-    margin: 0 2rem 0 3rem;
+    min-height: 86vh;
+    margin: 0 2rem 0 2rem;
     height: fit-content;
 }
 
@@ -17,7 +18,6 @@
 }
 
 @media (max-width: 720px) {
-
     .content-container,
     .content-container__body,
     .content-container__body--view {
