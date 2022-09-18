@@ -2,7 +2,7 @@
 .search-bar-container--home {
     z-index: 8;
     margin: 0 2rem 0 2rem;
-    width: 29rem;
+    width: 29.5rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     justify-content: space-between;
     border-radius: 30px;
     border: 1.70px solid transparent;
-    transition: all 0.2s ease;
+    transition: all 0.4s ease;
     box-sizing: border-box;
     box-shadow:
         0 3px 3px -1px rgb(0 0 0 / 2%),
@@ -36,11 +36,8 @@
 }
 
 .search-bar-container__input-wrap:focus-within {
-    border: 1.70px solid black;
-    box-shadow:
-        0 3px 3px -1px #209be011,
-        0 8px 30px 1px #209be011,
-        0 3px 14px 2px #209be011;
+    border: 1.70px solid #202020;
+    box-shadow: none;
 }
 
 
