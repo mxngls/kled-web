@@ -25,12 +25,13 @@
 
 .search-bar-container__match-type:hover {
     border-radius: 5px;
-    background-color: #e8f5fb;
+    background-color: #F1F3F5;
     cursor: pointer;
 }
 
 .search-bar-container__match-type--active:hover {
-    background-color: #fff;
+    border-radius: 5px;
+    background-color: #F1F3F5;
     cursor: auto;
 }
 

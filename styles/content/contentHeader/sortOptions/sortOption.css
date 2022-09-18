@@ -4,11 +4,11 @@
 
 .sort-option-container__sort-option:hover {
     border-radius: 5px;
-    background-color: #e8f5fb;
+    background-color: #f1f3f5;
     cursor: pointer;
 }
 
 .sort-option-container__sort-option--active {
-    cursor:default;
-    padding: 0.3rem
+    cursor: default;
+    padding: 0.3rem;
 }
