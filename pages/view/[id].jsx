@@ -4,10 +4,11 @@ import WordListButton from "../../components/wordlist/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 
 import { fetchViewData, getMostFrequent } from "../../lib/view.js";
-
 import { SpinnerCircularFixed } from "spinners-react";
+import { useRouter } from "next/router.js";
 
 export default function View({ word }) {
+    const router = useRouter();
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
@@ -18,26 +19,22 @@ export default function View({ word }) {
         }
     };
 
-    if (word === null) {
+    if (router.isFallback) {
         return (
             <Layout>
-                <div className="content-container">
-                    <div className="content-container__body--view">
-                        <div
-                            style={{
-                                height: "100%",
-                                display: "flex",
-                                justifyContent: "flex-start",
-                            }}
-                        >
-                            <SpinnerCircularFixed
-                                size={115}
-                                color={"black"}
-                                secondaryColor={"lightGrey"}
-                                speed={140}
-                            />
-                        </div>
-                    </div>
+                <div
+                    style={{
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
+                    <SpinnerCircularFixed
+                        size={115}
+                        color={"black"}
+                        secondaryColor={"lightGrey"}
+                        speed={140}
+                    />
                 </div>
             </Layout>
         );
@@ -72,12 +69,13 @@ export async function getStaticPaths() {
     const paths = await getMostFrequent();
     return {
         paths,
-        fallback: "blocking",
+        fallback: true,
     };
 }
 
 export async function getStaticProps(context) {
-    const word = await fetchViewData(Number(context.params.id));
+    const res = await fetchViewData(Number(context.params.id));
+    const word = await res.json();
     if (word === null) {
         return { notFound: true };
     }
