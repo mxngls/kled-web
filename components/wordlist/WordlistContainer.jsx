@@ -87,6 +87,7 @@ export default function WordlistContainer() {
                     style={{
                         display: "flex",
                         justifyContent: "center",
+                        marginBottom: "13rem"
                     }}
                 >
                     <h2>No words added yet</h2>

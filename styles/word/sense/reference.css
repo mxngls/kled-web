@@ -4,15 +4,12 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border: solid 0.5px rgb(149, 149, 149);
-    padding: 0.4em;
     border-radius: 5px;
     margin-top: 1rem;
 }
 
 .word-container__reference-body {
     vertical-align: middle;
-    padding: 0 0.5em 0 0.5em;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -21,15 +18,21 @@
 }
 
 .word-container__reference-type {
+    border-radius: 5px;
     overflow-wrap: break-word;
-    margin: 0.4rem 0 0.4rem 0;
-    width: 7rem;
+    margin: 0.4rem 1rem 0.4rem 0;
 }
 
 .word-container__reference-value {
     margin: 0.4rem 0 0.4rem 0;
     min-width: 10rem;
     font-size: 110%;
+}
+
+.word-container__reference-link {
+    color: #000;
+    font-size: 90%;
+    margin-right: 0.4rem;
 }
 
 @media (max-width: 565px) {

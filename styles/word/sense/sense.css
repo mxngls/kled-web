@@ -1,13 +1,14 @@
-.word-container__sense-container {
-    margin-right: 5rem;
-    margin-top: 2rem;
-}
-
-.word-container__sense-container--detail {
+.word-container__sense-container,
+.word-container__sense-container--last,
+.word-container__sense-container--search {
     margin-right: 5rem;
     margin-top: 2rem;
     border-bottom: 1px dashed #eaecef;
-    border-bottom: 1px dashed #eaecef
+}
+
+.word-container__sense-container--last,
+.word-container__sense-container--search {
+    border-bottom: none;
 }
 
 .word-container__sense-header {
@@ -55,5 +56,9 @@
 @media (max-width: 565px) {
     .word-container__sense-container {
         margin-bottom: 1.5rem;
+    }
+    .word-container__sense-container--last,
+    .word-container__sense-container {
+        margin: 0;
     }
 }
