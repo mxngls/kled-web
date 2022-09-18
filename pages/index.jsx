@@ -11,8 +11,7 @@ export default function Home() {
             </HeaderContainer>
             <main>
                 <div className="home-container">
-                    <h1>KLED</h1>
-                    <h4>The Korean Learner&apos;s English Dictionary</h4>
+                    <h2>The Korean Learner&apos;s English Dictionary</h2>
                     <div className="home__content">
                         <SearchBarContainer home={true} />
                     </div>
