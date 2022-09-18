@@ -1,7 +1,7 @@
 import WordHeader from "./WordHeader.jsx";
 import WordBody from "./WordBody.jsx";
 
-export default function WordContainer({ detail, last, data, keyword, children }) {
+export default function WordContainer({ search, last, data, keyword, children }) {
     return (
         <div className={`word-container${last ? "--last" : ""}`}>
             <WordHeader
@@ -14,7 +14,7 @@ export default function WordContainer({ detail, last, data, keyword, children })
                 {children}
             </WordHeader>
             <WordBody
-                detail={detail}
+                search={search}
                 senses={data.item.Senses}
                 inflections={data.item.Inflections}
                 inflectionLinks={data.item.InflectionLinks}

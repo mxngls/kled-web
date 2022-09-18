@@ -1,10 +1,12 @@
 import SenseBody from "./SenseBody";
 import SenseHeader from "./SenseHeader";
 
-export default function Sense({ detail, data, id, keyword }) {
+export default function Sense({ search, data, id, keyword }) {
     return data.map((sense, index) => (
         <dl
-            className={`word-container__sense-container${ (index !== -1 && detail) ? "--detail" : ""}`}
+            className={`word-container__sense-container${
+                index === data.length - 1 ? "--last" : search ? "--search" : ""
+            }`}
             key={`${id}-sense-${index}`}
         >
             <SenseHeader
