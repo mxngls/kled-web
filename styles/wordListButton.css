@@ -1,20 +1,12 @@
 .wordlist-button {
     font-weight: 200;
-    color: #15638F;
+    color: #202020;
     padding: 0.6em 0.8em 0.6em 0.8em;
-    background-color: #DAEEFA;
+    background-color: #f1f3f5;
     display: flex;
     align-items: center;
     border: none;
     border-radius: 25px;
-}
-
-.wordlist-button__content {
-    font-weight: 200;
-}
-
-.wordlist-button:hover {
-    background-color: #E1F1FB;
 }
 
 .wordlist-button__icon-wrap {
@@ -22,9 +14,17 @@
     margin-right: 0.4rem;
     height: 1.45rem;
     width: 1.45rem;
-    background-color: inherit;
+    background-color: none;
     transition: all 0.2s ease;
     border: none;
+}
+
+.wordlist-button__content {
+    font-weight: 200;
+}
+
+.wordlist-button:hover {
+    background-color: #eaecef;
 }
 
 .wordlist-button__icon {
