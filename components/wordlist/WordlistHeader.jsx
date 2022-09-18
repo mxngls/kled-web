@@ -1,4 +1,4 @@
-import WordListButton from "../WordListButton";
+import WordListButton from "./WordListButton";
 import DownloadIcon from "../icons/DownloadIcon";
 
 export default function WordlistHeader({ wordNum, handleOnClick }) {

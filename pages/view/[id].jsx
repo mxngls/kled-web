@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout.jsx";
 import WordContainer from "../../components/word/WordContainer.jsx";
-import WordListButton from "../../components/WordListButton.jsx";
+import WordListButton from "../../components/wordlist/WordListButton.jsx";
 import AddIcon from "../../components/icons/AddIcon.jsx";
 
 import { fetchViewData, getMostFrequent } from "../../lib/view.js";
