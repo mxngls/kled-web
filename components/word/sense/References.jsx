@@ -15,14 +15,18 @@ export default function Reference({ references, id, index }) {
                             {":"}
                         </span>
                         {!!reference.Id ? (
-                            <Link href={`/view/${reference.Id}`}>
-                                <a
-                                    className="word-container__reference-value"
-                                    dangerouslySetInnerHTML={{
-                                        __html: reference.Value,
-                                    }}
-                                />
-                            </Link>
+                            <span className="word-container__reference-value">
+                                {reference.Id.map((id, e) => (
+                                    <Link
+                                        key={`word-${id}-sense-${index}--ref-${i}-ref_link-${e}`}
+                                        href={`/view/${id}`}
+                                    >
+                                        <a className="word-container__reference-link">
+                                            {reference.Value[e]}
+                                        </a>
+                                    </Link>
+                                ))}
+                            </span>
                         ) : (
                             <span className="word-container__reference-value">
                                 {reference.Value}
