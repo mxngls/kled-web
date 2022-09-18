@@ -53,9 +53,12 @@ h4 {
 }
 
 h2 {
+    text-align: center;
     margin: 0;
-    margin-bottom: 2rem;
+    margin: 0 1rem 2rem 1rem;
     font-family: "Modern Era";
+    font-weight: 400;
+    text-shadow: 1px 1.5px rgb(149, 149, 149);
 }
 
 a {
