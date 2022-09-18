@@ -8,7 +8,6 @@ import { fetchViewData, getMostFrequent } from "../../lib/view.js";
 import { SpinnerCircularFixed } from "spinners-react";
 
 export default function View({ word }) {
-
     const handleOnClick = () => {
         const key = word.Id.toString();
         if (!sessionStorage.getItem(key)) {
@@ -79,7 +78,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     const word = await fetchViewData(Number(context.params.id));
-
     if (word === null) {
         return { notFound: true };
     }

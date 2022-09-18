@@ -1,25 +1,23 @@
 .header-container,
 .header-container--home {
-  top: 0;
-  z-index: 6;
-  position: sticky;
-  position: -webkit-sticky;
-  align-self: flex-start;
-  overflow-y: visible;
-  width: 100vw;
-  height: 16vh;
+    top: 0;
+    z-index: 6;
+    align-self: flex-start;
+    overflow-y: visible;
+    width: 100vw;
+    height: 16vh;
 
-  padding: 1rem 0 1rem 0;
-  margin: 0;
+    padding: 1rem 0 1rem 0;
+    margin: 0;
 
-  border-bottom: 1px solid #eaecef;
-  box-sizing: border-box;
+    border-bottom: 1px solid #eaecef;
+    box-sizing: border-box;
 
-  display: flex;
-  flex-wrap: wrap-reverse;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 
-  background-color: #ffff;
+    background-color: #ffff;
 }
