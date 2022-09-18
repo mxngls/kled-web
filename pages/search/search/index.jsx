@@ -10,22 +10,16 @@ import { SpinnerCircularFixed } from "spinners-react";
 export default function Results() {
     const abortController = useRef();
     const router = useRouter();
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState({
         words: null,
         keyword: router.query.keyword,
     });
 
-    useEffect(() => {
-        const handleRouteChange = () => {
-            setData({ words: null, keyword: router.query.keyword });
-        };
-
-        router.events.on("routeChangeStart", handleRouteChange);
-
-        return () => {
-            router.events.off("routeChangeStart", handleRouteChange);
-        };
-    }, []);
+    useEffect(
+        () => setData((prevData) => ({ ...prevData, words: null })),
+        [router.query.keyword]
+    );
 
     useEffect(() => {
         async function fetchSearchData(keyword, matchType) {
@@ -63,6 +57,7 @@ export default function Results() {
                         words: json,
                         keyword: keyword,
                     });
+                    setLoading(false);
                 } else setData("notFound");
             } catch (error) {
                 if (!error instanceof DOMException) {
@@ -77,7 +72,9 @@ export default function Results() {
         return () => {};
     }, [router.query.keyword, router.isReady]);
 
-    if (data.words === null) {
+    if (data === "notFound") {
+        router.replace("/404", router.asPath);
+    } else if (data.words === null) {
         return (
             <Layout>
                 <div
@@ -96,8 +93,6 @@ export default function Results() {
                 </div>
             </Layout>
         );
-    } else if (data === "notFound") {
-        router.replace("/404", router.asPath);
     } else {
         return (
             <Layout>
