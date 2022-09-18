@@ -2,7 +2,7 @@ import SenseContainer from "./sense/SenseContainer";
 import Inflections from "./Inflections.jsx";
 
 export default function WordBody({
-    detail,
+    search,
     senses,
     inflections,
     inflectionLinks,
@@ -13,7 +13,7 @@ export default function WordBody({
     if (!!senses[0].Translation) {
         wordContainer.push(
             <SenseContainer
-                detail={detail}
+                search={search}
                 key={`word-sense-${id}`}
                 data={senses}
                 id={id}

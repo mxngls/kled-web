@@ -4,9 +4,10 @@ import { useEffect, useCallback, useState } from "react";
 import WordContainer from "../word/WordContainer";
 import GoToViewButton from "../GoToViewButton";
 
-export default function ContentBody({ data, option }) {
+export default function ContentBody({ search, data, option }) {
     const router = useRouter();
     const [state, setState] = useState({ words: data.words });
+    window.scrollTo({ top: 0, left: 0});
 
     const memorizedSortedWords = useCallback(
         (sort) => {
@@ -34,6 +35,7 @@ export default function ContentBody({ data, option }) {
                 .map((element, index, arr) => {
                     return (
                         <WordContainer
+                            search={search}
                             last={
                                 index === arr.length - 1 ||
                                 (index + 1) % 10 === 0

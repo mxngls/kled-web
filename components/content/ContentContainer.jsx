@@ -6,7 +6,7 @@ import ContentHeader from "./ContentHeader/ContentHeaderContainer";
 
 import ContentBody from "./ContentBody";
 
-export default function ContentContainer({ data, setData }) {
+export default function ContentContainer({ search, data, setData }) {
     const router = useRouter();
     const [option, setOption] = useState(router.query.sort);
 
@@ -18,7 +18,11 @@ export default function ContentContainer({ data, setData }) {
                 option={option}
                 setOption={setOption}
             />
-            <ContentBody data={data} setData={setData} option={option} />
+            <ContentBody
+                search={search}
+                data={data}
+                option={option}
+            />
             <ContentFooter
                 keyword={router.query.keyword}
                 matchType={router.query.matchType}
