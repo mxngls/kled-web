@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useCallback, useState } from "react";
 
 import WordContainer from "../word/WordContainer";
-import GoToViewButton from "../GoToViewButton";
+import GoToViewLink from "../GoToViewLink";
 
 export default function ContentBody({ search, data, option }) {
     const router = useRouter();
@@ -47,7 +47,7 @@ export default function ContentBody({ search, data, option }) {
                             keyword={data.keyword}
                         >
                             {element.item.Inflection === null && (
-                                <GoToViewButton id={element.item.Id} />
+                                <GoToViewLink id={element.item.Id} />
                             )}
                         </WordContainer>
                     );

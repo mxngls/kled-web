@@ -10,7 +10,6 @@ import { SpinnerCircularFixed } from "spinners-react";
 export default function Results() {
     const abortController = useRef();
     const router = useRouter();
-    const [loading, setLoading] = useState(true);
     const [data, setData] = useState({
         words: null,
         keyword: router.query.keyword,
