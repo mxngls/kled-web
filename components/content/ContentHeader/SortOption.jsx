@@ -23,7 +23,15 @@ export default function SortOption({
                         batch: router.query.batch,
                     },
                 },
-                null,
+                {
+                    pathname: `/search/search`,
+                    query: {
+                        keyword: router.query.keyword,
+                        matchType: router.query.matchType,
+                        sort: option,
+                        batch: router.query.batch,
+                    },
+                },
                 { shallow: true, scroll: false }
             );
         }
