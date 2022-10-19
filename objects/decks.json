@@ -1,32 +1,41 @@
 {
-    "66458880": {
-        "id": 66458880,
-        "mod": 66458880,
+    "1": {
+        "id": 1,
+        "mod": 0,
+        "name": "Default",
+        "usn": 0,
+        "lrnToday": [0, 0],
+        "revToday": [0, 0],
+        "newToday": [0, 0],
+        "timeToday": [0, 0],
+        "collapsed": true,
+        "browserCollapsed": true,
+        "desc": "",
+        "dyn": 0,
+        "conf": 1,
+        "extendNew": 0,
+        "extendRev": 0
+    },
+    "1663633669568": {
+        "id": 1663633669568,
+        "mod": 1666073103,
         "name": "KLED",
         "usn": -1,
-        "lrnToday": [
-            0,
-            0
-        ],
-        "revToday": [
-            0,
-            0
-        ],
-        "newToday": [
-            0,
-            0
-        ],
-        "timeToday": [
-            0,
-            0
-        ],
+        "lrnToday": [0, 0],
+        "revToday": [0, 0],
+        "newToday": [0, 0],
+        "timeToday": [0, 0],
         "collapsed": true,
         "browserCollapsed": true,
         "desc": "",
         "md": true,
         "dyn": 0,
-        "activeTags": [],
+        "newLimit": null,
+        "newLimitToday": null,
+        "reviewLimit": null,
+        "reviewLimitToday": null,
         "inactiveTags": [],
+        "activeTags": [],
         "conf": 1,
         "extendNew": 0,
         "extendRev": 0

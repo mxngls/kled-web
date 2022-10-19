@@ -1,19 +1,18 @@
 {
-    "addToCur": true,
-    "newSpread": 0,
-    "schedVer": 1,
-    "activeDecks": [
-        1
-    ],
-    "curModel": 0,
-    "dayLearnFirst": false,
-    "curDeck": 0,
-    "timeLim": 0,
-    "collapseTime": 1200,
-    "dueCounts": true,
+    "curModel": 66458880,
     "estTimes": true,
+    "newSpread": 0,
     "sortBackwards": false,
-    "localOffset": -540,
+    "collapseTime": 1200,
     "sortType": "noteFld",
-    "nextPos": 266
+    "schedVer": 2,
+    "creationOffset": -540,
+    "dayLearnFirst": false,
+    "dueCounts": true,
+    "curDeck": 1,
+    "nextPos": 193,
+    "timeLim": 0,
+    "activeCols:": ["noteFld", "template", "cardDue", "deck"],
+    "activeDecks": [1],
+    "addToCur": true
 }
