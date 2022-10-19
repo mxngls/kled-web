@@ -21,7 +21,8 @@ export default function WordlistContainer() {
         model: modelJSON,
         decks: decksJSON,
         dconf: deckConfigJSON,
-        id: 66458880,
+        modelId: 66458880,
+        deckId: 1663633669568,
     });
 
     useEffect(() => {
@@ -61,7 +62,7 @@ export default function WordlistContainer() {
 
     const handleOnClick = async () => {
         if (Object.keys(sessionStorage).length > 0) {
-            addToDb(db, objects.id)
+            addToDb(db, objects.modelId, objects.deckId)
                 .then(() => zipDb(db))
                 .then(() => closeDb(db))
                 .then(() => setDb(null));
