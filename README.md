@@ -18,5 +18,6 @@ As this application is deployed on Vercel and thus over a CDN loading times are 
 ## To-DOs
 
 - [ ] Adopt Typscript and convert files to .ts/.tsx
-- [ ] Rewrite search to get elements from backend and discard dictionary files
+- [ ] Create a table for proverbs and ideoms (backend)
+- [✅] Rewrite search to get elements from backend and discard dictionary files
 
