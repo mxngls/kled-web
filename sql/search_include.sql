@@ -52,6 +52,9 @@ from word
     full join inflection on word.id = inflection.id
     full join sense on word.id = sense.id
 where word.hangul similar to concat('%', term, '%')
-    or sense.translation similar to concat('%', term, '%')
+    or term = any(
+        select unnest((string_to_array(arr, ' ')))
+        from unnest(string_to_array(sense.translation, ';')) as arr
+    )
     or inflection.inflections similar to concat('%', term, '%')
     or word.hanja similar to concat('%', term, '%');
