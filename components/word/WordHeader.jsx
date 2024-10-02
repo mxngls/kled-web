@@ -11,12 +11,14 @@ export default function WordHeader({
     return (
         <div className={`word-container__header${!typeKr ? "--fill" : ""}`}>
             <div className="word-container__first">
-                <p className="word-container__hangul">
-                    {hangul.includes(keyword)
-                        ? highlight(hangul, keyword)
-                        : hangul}
-                    {homonymNumber !== 0 && <sup>{homonymNumber}</sup>}
-                </p>
+                {!!hangul &&
+                    <p className="word-container__hangul">
+                        {hangul.includes(keyword)
+                            ? highlight(hangul, keyword)
+                            : hangul}
+                        {homonymNumber !== 0 && <sup>{homonymNumber}</sup>}
+                    </p>
+                }
                 {!!hanja && (
                     <p className="word-container__hanja">
                         (&nbsp;
